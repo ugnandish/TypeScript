@@ -43,10 +43,13 @@ let active: boolean = true;
 
 <h4>Arrays</h4>
 <p>To annotate an array type you use a specific type followed by a square bracket <code>: type[]</code></p>
+<b>syntax</b>
 
 ```
 let arrayName: type[];
+```
 
+```
 let names: string[] = ['John', 'Jane', 'Peter', 'David', 'Mary'];
 ```
 
@@ -90,6 +93,58 @@ greeting = function () {
 };
 
 //Error - Type '() => void' is not assignable to type '(name: string) => string'. Type 'void' is not assignable to type 'string'.
+```
+
+<h3>Number</h3>
+<p>All numbers in TypeScript are either floating-point values or big integers. The floating-point numbers have the type <code>number</code> while the big integers get the type <code>bigint</code></p>
+
+```
+let price: number;
+
+Or you can initialize the price variable to a number:
+
+let price = 9.95;
+```
+
+<p>As in JavaScript, TypeScript supports the number literals for decimal, hexadecimal, binary, and octal literals:</p>
+
+<h4>Decimal numbers</h4>
+
+```
+let counter: number = 0;
+let x: number = 1.00, 
+    y: number = 2.00;
+```    
+
+<h4>Binary Numbers</h4>
+<p>The binary number uses a leading zero followed by a lowercase or uppercase letter “B” e.g., <code>0b</code> or <code>0B</code> :</p>
+
+```
+let bin = 0b100;
+let anotherBin: number = 0B010;
+```
+
+<p>Note that the digit after <code>0b</code> or <code>0B</code> must be <code>0</code> or <code>1</code></p>
+
+<h4>Octal Numbers</h4>
+<p>An octal number uses a leading zero followed by the letter <code>o</code> (since ES2015) <code>0o</code>. The digits after <code>0o</code> are numbers in the range <code>0</code> through <code>7</code>:</p>
+
+```
+let octal: number = 0o10;
+```
+
+<h4>Hexadecimal numbers</h4>
+<p>Hexadecimal numbers use a leading zero followed by a lowercase or uppercase letter <code>X</code> (<code>0x</code> or <code>0X</code>). The digits after the <code>0x</code> must be in the range (<code>0123456789ABCDEF</code>). For example:</p>
+
+```
+let hexadecimal: number = 0XA;
+```
+
+<h4>Big Integers</h4>
+<p>The big integers represent the whole numbers larger than 253 – 1. A Big integer literal has the <code>n</code> character at the end of an integer literal like this:</p>
+
+```
+let big: bigint = 9007199254740991n;
 ```
 
 
