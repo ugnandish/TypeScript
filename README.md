@@ -147,6 +147,38 @@ let hexadecimal: number = 0XA;
 let big: bigint = 9007199254740991n;
 ```
 
+<h3>String</h3>
+<p>TypeScript uses double quotes <code>(")</code> or single quotes <code>(')</code> to surround string literals:</p>
+
+```
+let firstName: string = 'John';
+let title: string = "Web Developer";
+```
+
+<p>TypeScript also supports template strings that use the backtick (`) to surround characters.</p>
+<p>The template strings allow you to create multi-line strings and provide the string interpolation features.</p>
+
+```
+let description = `This TypeScript string can 
+span multiple 
+lines
+`;
+```
+
+<p>String interpolations allow you to embed the variables into the string</p>
+
+```
+let firstName: string = `Nandish`;
+let title: string = `Web Developer`;
+let profile: string = `I'm ${firstName}. 
+I'm a ${title}`;
+
+console.log(profile);
+
+I'm Nandish. 
+I'm a Web Developer.
+```
+
 
 <h4>JS Example 1</h4>
 
