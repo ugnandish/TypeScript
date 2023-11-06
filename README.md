@@ -179,6 +179,52 @@ I'm Nandish.
 I'm a Web Developer.
 ```
 
+<h3>Boolean</h3>
+<p>The TypeScript boolean type has two values: <code>true</code> and <code>false</code>. The boolean type is one of the <code>primitive</code> types in TypeScript.</p>
+<p>we can declare a boolean variable using the boolean keyword</p>
+
+```
+let pending: boolean;
+pending = true;
+// after a while
+// ..
+pending = false;
+```
+
+<p><b>Boolean operator:</b> AND, OR, NOT </p>
+
+```
+// NOT operator
+const pending: boolean = true;
+const notPending = !pending; // false
+console.log(notPending); // false
+
+const hasError: boolean = false;
+const completed: boolean = true;
+
+// AND operator
+let result = completed && hasError; 
+console.log(result); // false
+
+// OR operator
+result = completed || hasError; 
+console.log(result); // true
+```
+
+<p>Type annotations for boolean</p>
+
+```
+let completed: boolean = true;
+```
+
+<p>we can annotate boolean parameters or return the type of a function using the boolean keyword:</p>
+
+```
+function changeStatus(status: boolean): boolean {
+   //...
+}
+```
+<p>JavaScript has the <code>Boolean</code> type that refers to the non-primitive boxed object. The <code>Boolean</code> type has the letter <code>B</code> in uppercase, which is different from the <code>boolean</code> type.</p>
 
 <h4>JS Example 1</h4>
 
