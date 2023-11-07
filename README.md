@@ -226,6 +226,39 @@ function changeStatus(status: boolean): boolean {
 ```
 <p>JavaScript has the <code>Boolean</code> type that refers to the non-primitive boxed object. The <code>Boolean</code> type has the letter <code>B</code> in uppercase, which is different from the <code>boolean</code> type.</p>
 
+<h3>object Type</h3>
+<p>The TypeScript object type represents all values that are not in primitive types.</p>
+<p>The following are primitive types in TypeScript:</p>
+<ul>
+   <li>number</li>
+   <li>bigint</li>
+   <li>string</li>
+   <li>boolean</li>
+   <li>null</li>
+   <li>undefined</li>
+   <li>symbol</li>
+</ul>
+
+```
+let employee: object;
+
+employee = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 25,
+    jobTitle: 'Web Developer'
+};
+
+console.log(employee);
+
+{
+  firstName: 'John',       
+  lastName: 'Doe',
+  age: 25,
+  jobTitle: 'Web Developer'
+}
+```
+
 <h4>JS Example 1</h4>
 
 ```
