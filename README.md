@@ -259,6 +259,64 @@ console.log(employee);
 }
 ```
 
+<p>If you reassign a primitive value to the <code>employee</code> object, you’ll get an error :</p>
+
+```
+employee = "Jane";
+
+Error:
+error TS2322: Type '"Jane"' is not assignable to type 'object'.
+```
+
+<p>The <code>employee</code> object is an <code>object</code> type with a fixed list of properties. If you attempt to access a property that doesn’t exist on the <code>employee</code> object, you’ll get an error:</p>
+
+```
+console.log(employee.hireDate);
+
+Error:
+error TS2339: Property 'hireDate' does not exist on type 'object'.
+```
+
+<code>Note that the above statement works perfectly fine in JavaScript and returns undefined instead.</code>
+
+<p>To explicitly specify properties of the <code>employee</code> object, you first use the following syntax to declare the <code>employee</code> object:</p>
+
+```
+let employee: {
+    firstName: string;
+    lastName: string;
+    age: number;
+    jobTitle: string;
+};
+```
+
+<p>And then you assign the <code>employee</code> object to a literal object with the described properties:</p>
+
+```
+employee = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 25,
+    jobTitle: 'Web Developer'
+};
+```
+
+<p>Or you can combine both syntaxes in the same statement like this:</p>
+
+```
+let employee: {
+    firstName: string;
+    lastName: string;
+    age: number;
+    jobTitle: string;
+} = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 25,
+    jobTitle: 'Web Developer'
+};
+```
+
 <h4>JS Example 1</h4>
 
 ```
