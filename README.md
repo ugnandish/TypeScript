@@ -343,6 +343,36 @@ output:
 [object Object]
 ```
 
+<h3>Array Type</h3>
+<p>A TypeScript array is an ordered list of data. To declare an array that holds values of a specific type</p>
+<p>Syntax</p>
+
+```
+let arrayName: type[];
+```
+
+<p>The declare an array of strings:</p>
+
+```
+let skills: string[];
+
+you can add one or more strings to the array:
+skills[0] = "Problem Solving";
+skills[1] = "Programming";
+```
+
+<p>or use the <code>push()</code> method:</p>
+
+```
+skills.push('Software Design');
+```
+
+<p>The following declares a variable and assigns an array of strings to it:</p>
+
+```
+let skills = ['Problem Sovling','Software Design','Programming'];
+```
+
 
 <h4>JS Example 1</h4>
 
