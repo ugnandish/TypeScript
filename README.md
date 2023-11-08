@@ -316,6 +316,33 @@ let employee: {
     jobTitle: 'Web Developer'
 };
 ```
+<strong>object vs. Object</strong>
+<p>TypeScript has another type called <code>Object</code> with the letter <code>O</code> in uppercase. It’s important to understand the differences between them.</p>
+<p>The <code>object</code> type represents all non-primitive values while the <code>Object</code> type describes the functionality of all objects.</p>
+<p>For example, the <code>Object</code> type has the <code>toString()</code> and <code>valueOf()</code> methods that can be accessible by any object.</p>
+
+<b>The empty type {}</b>
+<p>TypeScript has another type called empty type denoted by <code>{}</code>, which is quite similar to the object type.</p>
+<p>The empty type <code>{}</code> describes an object that has no property on its own. If you try to access a property on such object, TypeScript will issue a compile-time error:</p>
+
+```
+let vacant: {};
+vacant.firstName = 'John';
+
+Error:
+error TS2339: Property 'firstName' does not exist on type '{}'.
+```
+
+<p>But you can access all properties and methods declared on the <code>Object</code> type, which is available on the object via prototype chain:</p>
+
+```
+let vacant: {} = {};
+console.log(vacant.toString());
+
+output:
+[object Object]
+```
+
 
 <h4>JS Example 1</h4>
 
