@@ -374,6 +374,60 @@ let skills = ['Problem Sovling','Software Design','Programming'];
 ```
 
 
+<h3>Functions</h3>
+<p>TypeScript functions are the building blocks of readable, maintainable, and reusable code.</p>
+<p>Like JavaScript, we can use the <code>function</code> keyword to declare a function in TypeScript:</p>
+<p>syntax</p>
+
+```
+function name(parameter: type, parameter:type,...): returnType {
+   // do something
+}
+```
+
+<p>TypeScript allows you to use type annotations in parameters and return the value of a function.</p>
+
+```
+function add(a: number, b: number): number {
+    return a + b;
+}
+```
+
+<p>When you call the <code>add()</code> function, the TypeScript compiler will check each argument passed to the function to ensure that they are numbers.</p>
+<p>In the <code>add()</code> function example, you can only pass numbers into it, not the values of other types.</p>
+<p>The following code will result in an error because it passes two strings instead of two numbers into the <code>add()</code> function:</p>
+
+```
+let sum = add('10', '20');
+
+Error:
+error TS2345: Argument of type '"10"' is not assignable to parameter of type 'number'
+```
+
+<p>The <code>: number</code> after the parentheses indicate the return type. The <code>add()</code> function returns a value of the <code>number</code> type in this case.</p>
+<p>When a function has a return type, the TypeScript compiler checks every <code>return</code> statement against the return type to ensure that the return value is compatible with it.</p>
+
+<p>If a function does not return a value, you can use the <code>void</code> type as the return type. The <code>void</code> keyword indicates that the function doesn’t return any value. For example:</p>
+
+```
+function echo(message: string): void {
+    console.log(message.toUpperCase());
+}
+```
+
+<p>The void prevents the code inside the function from returning a value and stops the calling code from assigning the result of the function to a variable.</p>
+<p>When you do not annotate the return type, TypeScript will try to infer an appropriate type. For example:</p>
+
+```
+function add(a: number, b: number) {
+    return a + b;
+}
+```
+
+<p>The TypeScript compiler tries to infer the return type of the <code>add()</code> function to the <code>number</code> type, which is expected.</p>
+<p>If a function has different branches that return different types, the TypeScript compiler may infer the <code>union</code> type or <code>any</code> type.</p>
+
+
 <h4>JS Example 1</h4>
 
 ```
