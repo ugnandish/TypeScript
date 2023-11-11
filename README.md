@@ -427,6 +427,59 @@ function add(a: number, b: number) {
 <p>The TypeScript compiler tries to infer the return type of the <code>add()</code> function to the <code>number</code> type, which is expected.</p>
 <p>If a function has different branches that return different types, the TypeScript compiler may infer the <code>union</code> type or <code>any</code> type.</p>
 
+<h3>Function Types</h3>
+<p>A function type has two parts: parameters and return type. When declaring a function type, you need to specify both parts with the following syntax:</p>
+
+```
+(parameter: type, parameter:type,...) => type
+```
+
+<p>A variable which has a function type that accepts two numbers and returns a number:</p>
+
+```
+let add: (x: number, y: number) => number;
+```
+
+<ul>
+<li>The function type accepts two arguments: <code>x</code> and <code>y</code> with the type <code>number</code>.</li>
+<li>The type of the return value is <code>number</code> that follows the fat arrow (<code>=></code>) appeared between parameters and return type.</li>
+</ul>
+
+<p>TypeScript compiler will match the number of parameters with their types and the return type.</p>
+
+```
+add = function (x: number, y: number) {
+    return x + y;
+};
+```
+
+<p>we can declare a variable and assign a function to a variable like this:</p>
+
+```
+let add: (a: number, b: number) => number =
+    function (x: number, y: number) {
+        return x + y;
+    };
+```
+
+<p>If you assign other functions whose type doesn’t match to the <code>add</code> variable, TypeScript will issue an error:</p>
+
+```
+add = function (x: string, y: string): number {
+    return x.concat(y).length;
+};
+```
+
+<h4>Inferring function types</h4>
+<p>TypeScript compiler can figure out the function type when you have the type on one side of the equation. This form of type inference is called contextual typing.</p>
+
+```
+let add = function(x: number, y:number): number {
+   return x + y;
+}
+let result = add(10, 20);
+```
+
 
 <h4>JS Example 1</h4>
 
