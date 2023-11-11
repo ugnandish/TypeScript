@@ -482,7 +482,48 @@ let result = add(10, 20);
 
 <p>the <code>add</code> function will take the type <code>(x: number, y:number) => number</code>.</p>
 
+<h3>Optional Parameters</h3>
+<p>In JavaScript, we can call a function without passing any arguments even though the function specifies parameters. JaveScript supports the optional parameters by default.</p>
+<p>In TypeScript, the compiler checks every function call and issues an error in the following cases:</p>
+<ul>
+<li>The number of arguments is different from the number of parameters specified in the function.</li>
+<li>Or the types of arguments are not compatible with the types of function parameters.</li>
+</ul>
 
+<p>Because the compiler thoroughly checks the passing arguments, you need to annotate optional parameters to instruct the compiler not to issue an error when you omit the arguments.</p>
+<p>To make a function parameter optional, you use the <code>?</code> after the parameter name.</p>
+
+```
+function multiply(a: number, b: number, c?: number): number {
+    if (typeof c !== 'undefined') {
+        return a * b * c;
+    }
+    return a * b;
+}
+```
+
+<p>How it works:</p>
+<ul>
+<li>First, use the <code>?</code> after the <code>c</code> parameter.</li>
+<li>Second, check if the argument is passed to the function by using the expression <code>typeof c !== 'undefined'</code>.</li>
+</ul>
+
+<p>Note that if you use the expression <code>if(c)</code> to check if an argument is not initialized, you would find that the empty string or zero would be treated as <code>undefined</code>.</p>
+
+<p>The optional parameters must appear after the required parameters in the parameter list.</p>
+<p>if you make the <code>b</code> parameter optional, and <code>c</code> parameter required the TypeScript compiler will issue an error:</p>
+
+```
+function multiply(a: number, b?: number, c: number): number {
+    if (typeof c !== 'undefined') {
+        return a * b * c;
+    }
+    return a * b;
+}
+
+Error:
+error TS1016: A required parameter cannot follow an optional parameter.
+```
 
 <h4>JS Example 1</h4>
 
