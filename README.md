@@ -480,6 +480,9 @@ let add = function(x: number, y:number): number {
 let result = add(10, 20);
 ```
 
+<p>the add function will take the type (x: number, y:number) => number.</p>
+
+
 
 <h4>JS Example 1</h4>
 
