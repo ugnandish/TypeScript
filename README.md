@@ -525,6 +525,51 @@ Error:
 error TS1016: A required parameter cannot follow an optional parameter.
 ```
 
+<h3>Default Parameters</h3>
+<p>JavaScript supported default parameters since ES2015 (or ES6) with the following syntax:</p>
+
+```
+function name(parameter1=defaultValue1,...) {
+   // do something
+}
+```
+
+<p>if you don’t pass arguments or pass the <code>undefined</code> into the function when calling it, the function will take the default initialized values for the omitted parameters.</p>
+
+```
+function applyDiscount(price, discount = 0.05) {
+    return price * (1 - discount);
+}
+
+console.log(applyDiscount(100)); // 95
+```
+
+<p>the <code>applyDiscount()</code> function has the discount parameter as a default parameter.</p>
+<p>When you don’t pass the <code>discount</code> argument into the <code>applyDiscount()</code> function, the function uses a default value which is <code>0.05</code>.</p>
+
+```
+function name(parameter1:type=defaultvalue1, parameter2:type=defaultvalue2,...) {
+   //
+}
+```
+
+<p>we can use default parameters in TypeScript with the same syntax:</p>
+
+```
+function name(parameter1:type=defaultvalue1, parameter2:type=defaultvalue2,...) {
+   //
+}
+```
+
+```
+function applyDiscount(price: number, discount: number = 0.05): number {
+    return price * (1 - discount);
+}
+
+console.log(applyDiscount(100)); // 95
+```
+
+
 <h4>JS Example 1</h4>
 
 ```
