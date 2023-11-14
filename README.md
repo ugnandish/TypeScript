@@ -569,6 +569,87 @@ function applyDiscount(price: number, discount: number = 0.05): number {
 console.log(applyDiscount(100)); // 95
 ```
 
+<p>Notice that you cannot include default parameters in function type definitions. The following code will result in an error:</p>
+
+```
+let promotion: (price: number, discount: number = 0.05) => number;
+
+error TS2371: A parameter initializer is only allowed in a function or constructor implementation.
+```
+
+<h4>Default parameters and Optional parameters</h4>
+<p>Like optional parameters, default parameters are also optional. It means that you can omit the default parameters when calling the function.</p>
+<p>In addition, both the default parameters and trailing default parameters share the same type.</p>
+
+```
+function applyDiscount(price: number, discount: number = 0.05): number {
+  // ...
+}
+
+function applyDiscount(price: number, discount?: number): number {
+  // ...
+}
+
+the same type:
+(price: number, discount?: number) => number
+```
+
+<p>Optional parameters must come after the required parameters. However, default parameters don’t need to appear after the required parameters.</p>
+<p>When a default parameter appears before a required parameter, you need to explicitly pass <code>undefined</code> to get the default initialized value.</p>
+
+```
+function getDay(year: number = new Date().getFullYear(), month: number): number {
+    let day = 0;
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            day = 31;
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            day = 30;
+            break;
+        case 2:
+            // leap year
+            if (((year % 4 == 0) &&
+                !(year % 100 == 0))
+                || (year % 400 == 0))
+                day = 29;
+            else
+                day = 28;
+            break;
+        default:
+            throw Error('Invalid month');
+    }
+    return day;
+}
+```
+
+<p>The default value of the year is the current year if you don’t pass an argument or pass the undefined value.</p>
+<p>The following example uses the <code>getDay()</code> function to get the number of days in Feb 2019:</p>
+
+```
+let day = getDay(2019, 2);
+console.log(day); // 28
+```
+
+<p>To get the number of days in Feb of the current year, you need to pass undefined to the year parameter like this:</p>
+
+```
+let day = getDay(undefined, 2);
+console.log(day);
+```
+
+<p>Use default parameter syntax <code>parameter:=defaultValue</code> if you want to set the default initialized value for the parameter.</p>
+<p>Default parameters are optional.</p>
+<p>To use the default initialized value of a parameter, you omit the argument when calling the function or pass the <code>undefined</code> into the function.</p>
 
 <h4>JS Example 1</h4>
 
